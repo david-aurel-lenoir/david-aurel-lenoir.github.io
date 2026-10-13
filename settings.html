@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Student Finance Tracker</title>
+    <link rel="stylesheet" href="styles/styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Student Finance Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-section="dashboard">Dashboard</a></li>
+                <li><a href="about.html" data-section="About">About</a></li>
+                <li><a href="add-expense.html" data-section="add-expense">Add-expenses</a></li>
+                <li><a href="records.html" data-section="records">Records</a></li>
+                <li><a href="settings.html" data-section="settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <section id="settings" class="section active">
+            <h2>Settings</h2>
+            <fieldset>
+                <legend>Currency</legend>
+                <label for="display-currency">Display currency (base is Rwf)</label>
+                <select name="base-currency" id="display-currency">
+                    <option value="RWF">RWF - Rwanda Franc</option>
+                    <option value="USD">USD - US Dollars</option>
+                    <option value="EUR">EUR - Euro</option>
+                </select>
+                <label for="rate-usd">1 USD = ? RWF</label>
+                <input id="rate-usd" type="number" inputmode="decimal" min="0" step="0.01">
+                <label for="rate-eur">1 EUR = ? RWF</label>
+                <input id="rate-eur" type="number" inputmode="decimal" min="0" step="0.01">
+            </fieldset>
+            <fieldset>
+                <legend>Spending cap</legend>
+                <label for="cap">Cap in RWF</label>
+                <input id="cap" type="number" inputmode="decimal" min="0" step="0.01">
+                <div class="actions"><button type="button" id="save-settings">Save Settings</button>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Data</legend>
+                <div class="actions">
+                    <button type="button" id="export-btn" class="btn btn-secondary">Export JSON</button>
+                    <label class="button secondary" for="import-file">Import JSON</label>
+                    <input id="import-file" type="file" accept=".json">
+                    <button type="button" class="secondary" id="load-sample-btn">Load sample data</button>
+                </div>
+            </fieldset>
+            <p id="settings-status" class="status" role="status"></p>
+        </section>
+    </main>
+    <script src="scripts/main.js"></script>
+    </body>
+</html>
